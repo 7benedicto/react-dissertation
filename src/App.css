@@ -1,0 +1,15 @@
+/* App.css */
+:root {
+  --primary-color: #809D3C;
+  --secondary-color: hsl(20, 86%, 53%);
+  --accent-color: #27548A;
+  --background-color: #F5F5F5;
+  --text-color: #333333;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}

@@ -1,0 +1,61 @@
+/* StudentUpload.css */
+
+.upload-container {
+    max-width: 520px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.upload-container h2 {
+    text-align: center;
+    color: #002147;
+    margin-bottom: 1.5rem;
+}
+
+.upload-form-group {
+    margin-bottom: 1.5rem;
+}
+
+.upload-form-group label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.upload-form-group input[type="text"],
+.upload-form-group input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.upload-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #002147;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.upload-button:hover {
+    background-color: #005e8c;
+}
+
+.upload-message {
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: 500;
+}

@@ -1,0 +1,147 @@
+.supervisor-dashboard {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.supervisor-dashboard h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #003366;
+    margin-bottom: 25px;
+}
+
+.error {
+    color: red;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.milestone-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.milestone-table th,
+.milestone-table td {
+    border: 1px solid #ddd;
+    padding: 12px 10px;
+    text-align: left;
+}
+
+.milestone-table th {
+    background-color: #f5f7fa;
+    color: #333;
+}
+
+input[type="text"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 6px;
+    font-size: 13px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn {
+    padding: 6px 12px;
+    margin: 2px;
+    font-size: 13px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn.edit {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn.save {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn.cancel {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* New Group and Expandable Container Styles */
+.milestone-group {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+.group-title {
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #003366;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    background-color: #e9ecef;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.group-title:hover {
+    background-color: #d4e3f8;
+}
+
+.group-title span {
+    font-size: 0.8em;
+    color: #666;
+    margin-left: 8px;
+}
+
+.milestone-group.expanded {
+    background-color: #eef7ff;
+}
+
+/* Optional: Responsive */
+@media (max-width: 768px) {
+    .milestone-table,
+    .milestone-table thead,
+    .milestone-table tbody,
+    .milestone-table th,
+    .milestone-table td,
+    .milestone-table tr {
+        display: block;
+    }
+
+    .milestone-table tr {
+        margin-bottom: 15px;
+    }
+
+    .milestone-table td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    .milestone-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        width: 45%;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+    }
+
+    .milestone-table th {
+        display: none;
+    }
+}

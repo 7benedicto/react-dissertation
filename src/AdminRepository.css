@@ -1,0 +1,72 @@
+/* AdminRepository.css */
+.admin-repository {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.filter-section {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 30px;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 6px;
+}
+
+.filter-section label {
+  font-weight: bold;
+}
+
+.filter-section select,
+.filter-section input {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.student-section h3 {
+  cursor: pointer;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.repository-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
+.repository-table th,
+.repository-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.repository-table th {
+  background-color: #f0f0f0;
+}
+
+.repository-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

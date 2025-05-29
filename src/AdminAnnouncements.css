@@ -1,0 +1,100 @@
+.announcement-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.announcement-container h2,
+.announcement-container h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.announcement-container form {
+    margin-bottom: 30px;
+}
+
+.announcement-container form div {
+    margin-bottom: 15px;
+}
+
+.announcement-container input,
+.announcement-container textarea,
+.announcement-container select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.announcement-container button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.announcement-container button:hover {
+    background-color: #0056b3;
+}
+
+.announcement-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.announcement-container li {
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+}
+
+.announcement-container h4 {
+    margin: 0 0 5px;
+    color: #222;
+}
+
+.announcement-container p {
+    margin: 0 0 10px;
+}
+
+.announcement-container small {
+    color: #666;
+}
+
+.message-success {
+    color: green;
+    text-align: center;
+}
+
+.message-error {
+    color: red;
+    text-align: center;
+}
+
+.back-button {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 8px 16px;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #5a6268;
+}

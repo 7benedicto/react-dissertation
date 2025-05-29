@@ -1,0 +1,90 @@
+/* Admin Login Container */
+.admin-login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f7fc;
+    margin: 0; /* Remove any default margin */
+}
+
+/* Login Box Styling */
+.admin-login-box {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    margin: 0; /* Remove default margin */
+}
+
+/* Header Styling */
+.admin-login-box h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+}
+
+/* Input Group Styling */
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Label Styling */
+.input-group label {
+    display: block;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+/* Input Field Styling */
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Focus State of Inputs */
+.input-group input:focus {
+    outline: none;
+    border-color: #4CAF50;
+    background-color: #fff;
+}
+
+/* Error Message Styling */
+.error-message {
+    color: #ff4d4d;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* Submit Button Styling */
+.login-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Button Hover State */
+.login-button:hover {
+    background-color: #45a049;
+}
+
+/* Button Active State */
+.login-button:active {
+    background-color: #388e3c;
+}

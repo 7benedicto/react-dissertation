@@ -1,0 +1,74 @@
+.dashboard-container {
+  display: flex;
+  height: calc(100vh - 80px); /* Assumes 80px header height */
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+  overflow: hidden; /* Prevents sidebar overflow */
+}
+
+/* Sidebar styles */
+.sidebar {
+  width: 250px;
+  background-color: var(--secondary-color);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1rem;
+  box-sizing: border-box;
+  overflow: hidden; /* Hides overflow */
+}
+
+/* Make sidebar content scrollable if it overflows */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+/* Sidebar items */
+.sidebar li {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.sidebar li:hover,
+.sidebar li.active {
+  background-color: var(--accent-color);
+  /* color: black; */
+}
+
+/* Logout button stays at bottom */
+.logout-button {
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: var(--accent-color);
+  color: black;
+}
+
+/* Main content area */
+.dashboard-main {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}

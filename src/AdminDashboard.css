@@ -1,0 +1,61 @@
+.admin-dashboard {
+  display: flex;
+  height: calc(100vh - 80px); /* Adjust if your Header has a different height */
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color);
+}
+
+/* Sidebar layout */
+.sidebar {
+  width: 250px;
+  background-color: var(--primary-color);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1rem;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.sidebar nav {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin-bottom: 10px;
+}
+
+.sidebar a {
+  display: block;
+  padding: 10px;
+  border-radius: 4px;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+  /* background-color: blue; */
+  /* color: black; */
+}
+
+/* Main content */
+.content {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}

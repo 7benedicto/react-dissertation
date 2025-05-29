@@ -1,0 +1,71 @@
+/* StudentProgress.css */
+
+.progress-container {
+    max-width: 850px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.progress-container h2 {
+    text-align: center;
+    color: #002147;
+    margin-bottom: 1.5rem;
+}
+
+.progress-bar-wrapper {
+    margin: 1.5rem 0;
+}
+
+.progress-label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.progress-bar {
+    height: 20px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    transition: width 0.5s ease-in-out;
+    background-color: #2196f3;
+}
+
+.progress-bar-fill.completed {
+    background-color: #4caf50;
+}
+
+.progress-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 0.95rem;
+}
+
+.progress-table th,
+.progress-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+.progress-table th {
+    background-color: #f0f4f8;
+    color: #002147;
+}
+
+.progress-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.error-message {
+    color: red;
+    text-align: center;
+}

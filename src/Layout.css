@@ -1,0 +1,7 @@
+/* Layout.css */
+.layout-wrapper {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  padding: 0rem;
+}

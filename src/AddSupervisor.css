@@ -1,0 +1,66 @@
+.add-supervisor-container {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.add-supervisor-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #2c3e50;
+}
+
+.add-supervisor-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-supervisor-container label {
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #333;
+}
+
+.add-supervisor-container input {
+    width: 100%; /* Ensures all inputs take full width */
+    box-sizing: border-box; /* Includes padding and border in width calculation */
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.add-supervisor-container button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-supervisor-container button:hover {
+    background-color: #0056b3;
+}
+
+.add-supervisor-container .message {
+    margin-top: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.add-supervisor-container .back-button {
+    margin-top: 20px;
+    background-color: #6c757d;
+}
+
+.add-supervisor-container .back-button:hover {
+    background-color: #5a6268;
+}

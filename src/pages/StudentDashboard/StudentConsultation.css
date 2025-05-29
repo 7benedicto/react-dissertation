@@ -1,0 +1,54 @@
+/* StudentConsultationStatus.css */
+
+.consultation-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.consultation-container h2 {
+    text-align: center;
+    color: #002147;
+    margin-bottom: 1.5rem;
+}
+
+.consultation-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.consultation-table th,
+.consultation-table td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+.consultation-table th {
+    background-color: #f0f4f8;
+    color: #002147;
+}
+
+.consultation-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.consultation-table tr:hover {
+    background-color: #eef4ff;
+}
+
+.consultation-error {
+    color: red;
+    text-align: center;
+}
+
+.consultation-message {
+    text-align: center;
+    color: #333;
+}

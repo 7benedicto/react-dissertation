@@ -1,0 +1,57 @@
+.consultation-container {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.consultation-container h2 {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.consultation-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.consultation-container label {
+  font-weight: bold;
+  color: var(--text-color);
+  margin-bottom: 0.3rem;
+}
+
+.consultation-container input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.consultation-container button {
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.consultation-container button:hover {
+  background-color: var(--accent-color);
+  color: black;
+}
+
+.consultation-container p {
+  margin-top: 1rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  text-align: center;
+}

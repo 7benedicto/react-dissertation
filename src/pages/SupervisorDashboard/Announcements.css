@@ -1,0 +1,86 @@
+/* Announcements.css */
+
+.announcement-container {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.announcement-container h2,
+.announcement-container h3 {
+    text-align: center;
+    color: #002147;
+    margin-bottom: 20px;
+}
+
+.announcement-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.announcement-form input,
+.announcement-form textarea {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.announcement-form button {
+    align-self: flex-start;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.announcement-form button:hover {
+    background-color: #0056b3;
+}
+
+.announcement-message {
+    color: green;
+    font-weight: 500;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.announcement-error {
+    color: red;
+    font-weight: 500;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.announcement-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.announcement-item {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.announcement-item h4 {
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.announcement-item small {
+    color: #666;
+}

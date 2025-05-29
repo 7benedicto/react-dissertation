@@ -1,0 +1,17 @@
+/* Header.css */
+.header {
+    background-color: white;
+    padding: 1px;
+    border-bottom: 16px solid var(--secondary-color); /* Light gray line separating header and body */
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  height: 20px;
+  width: auto;
+}

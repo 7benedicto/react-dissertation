@@ -1,0 +1,21 @@
+.grouped-student-list {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.student-group {
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #f3f3f3;
+  border-left: 4px solid #007acc;
+}
+
+.student-group h3 {
+  margin-bottom: 10px;
+  color: #007acc;
+}
+
+.student-group ul {
+  list-style-type: none;
+  padding-left: 0;
+}
