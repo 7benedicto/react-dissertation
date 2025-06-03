@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "./SupervisorDocuments.css"; // Import CSS file
+import "./SupervisorDocuments.css";
 
 const SupervisorDocuments = () => {
     const [documents, setDocuments] = useState([]);
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(true);
+    const [filterType, setFilterType] = useState("all"); // "all" | "student" | "group"
 
     useEffect(() => {
         const fetchDocuments = async () => {
@@ -54,27 +55,45 @@ const SupervisorDocuments = () => {
         }
     };
 
+    const filteredDocuments = documents.filter((doc) => {
+        if (filterType === "student") return doc.content_type_name === "student";
+        if (filterType === "group") return doc.content_type_name === "projectgroup";
+        return true;
+    });
+
     return (
         <div className="doc-container">
-            <h2>Student Uploaded Documents</h2>
+            <h2>📂 Supervisor Document View</h2>
+
+            <div className="doc-filter-buttons">
+                <button onClick={() => setFilterType("all")} disabled={filterType === "all"}>
+                    🧾 All
+                </button>
+                <button onClick={() => setFilterType("student")} disabled={filterType === "student"}>
+                    👤 Student Docs
+                </button>
+                <button onClick={() => setFilterType("group")} disabled={filterType === "group"}>
+                    👥 Group Docs
+                </button>
+            </div>
 
             {loading && <p className="status-text">⏳ Loading documents...</p>}
             {error && <p className="error-text">{error}</p>}
 
-            {!loading && !error && documents.length > 0 ? (
+            {!loading && !error && filteredDocuments.length > 0 ? (
                 <table className="doc-table">
                     <thead>
                         <tr>
                             <th>#</th>
                             <th>Type</th>
                             <th>Title</th>
-                            <th>Student</th>
+                            <th>{filterType === "group" ? "Group" : "Owner"}</th>
                             <th>Date</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {documents.map((doc, index) => (
+                        {filteredDocuments.map((doc, index) => (
                             <tr key={doc.id}>
                                 <td>{index + 1}</td>
                                 <td>{getFileTypeIcon(doc.file)}</td>
@@ -103,7 +122,7 @@ const SupervisorDocuments = () => {
                     </tbody>
                 </table>
             ) : (
-                !loading && !error && <p className="status-text">No documents uploaded yet.</p>
+                !loading && !error && <p className="status-text">No documents to show.</p>
             )}
         </div>
     );

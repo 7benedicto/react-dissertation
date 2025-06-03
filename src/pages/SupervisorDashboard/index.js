@@ -8,6 +8,8 @@ import SupervisorDocuments from "./SupervisorDocuments";
 import UserProfile from "../../UserProfile";
 import CreateMilestone from "./CreateMilestone";
 import SupervisorMilestone from "./SupervisorMilestone";
+import NotificationList from "./Notification";
+import NotificationBell from "./NotificationBell";
 import "./styles.css"; // Make sure styles are linked correctly
 
 const SupervisorDashboard = () => {
@@ -41,6 +43,10 @@ const SupervisorDashboard = () => {
                 return <CreateMilestone />;
             case "progress":
                 return <SupervisorMilestone />;
+            case "notification":
+                return <NotificationList />
+            case "notificationbell":
+                return <NotificationBell />
             case "profile":
                 return <UserProfile />;
             default:
@@ -102,6 +108,12 @@ const SupervisorDashboard = () => {
                         Progress
                     </li>
                     <li
+                        className={section === "notification" ? "active" : ""}
+                        onClick={() => setSection("notification")}
+                    >
+                        Notification
+                    </li>
+                    <li
                         className={section === "profile" ? "active" : ""}
                         onClick={() => setSection("profile")}
                     >
@@ -118,6 +130,11 @@ const SupervisorDashboard = () => {
             <main className="dashboard-main">
                 {renderSection()}
             </main>
+            {/* Add this container for notification icon on the right */}
+            <div className="notification-container">
+                <NotificationBell />
+            </div>
+
         </div>
     );
 };

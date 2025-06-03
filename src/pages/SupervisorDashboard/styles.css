@@ -16,6 +16,7 @@ body, html {
   background-color: var(--background-color);
   color: var(--text-color);
   font-family: Arial, sans-serif;
+  overflow: hidden;
 }
 
 /* Sidebar */
@@ -28,6 +29,7 @@ body, html {
   flex-direction: column;
   justify-content: space-between;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
 .dashboard-sidebar h3 {
@@ -39,6 +41,8 @@ body, html {
 .dashboard-sidebar ul {
   list-style: none;
   padding: 0;
+  flex-grow: 1;
+  overflow-y: auto;
 }
 
 .dashboard-sidebar li {
@@ -82,4 +86,8 @@ body, html {
   flex: 1;
   padding: 2rem;
   overflow-y: auto;
+}
+
+.notification-container {
+    position: relative;
 }
