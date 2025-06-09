@@ -10,6 +10,7 @@ const StudentRegisterForm = () => {
         password: '',
         course_id: '',
         year_id: '',
+        sex: '',
     });
 
     const [courses, setCourses] = useState([]);
@@ -107,6 +108,14 @@ const StudentRegisterForm = () => {
                                 {years.map(year => (
                                     <option key={year.id} value={year.id}>{year.year}</option>
                                 ))}
+                            </select>
+                        </div>
+                        <div className="input-group">
+                            <select name="sex" value={formData.sex} onChange={handleChange} required>
+                                <option value="">Select Sex</option>
+                                <option value="M">Male</option>
+                                <option value="F">Female</option>
+                                <option value="O">Other</option>
                             </select>
                         </div>
                         <button type="submit" className="register-button">Register</button>

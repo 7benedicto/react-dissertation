@@ -56,7 +56,7 @@ const AdminLoginForm = () => {
     return (
         <div className="admin-login-container">
             <div className="admin-login-box">
-                <h2>Admin Login</h2>
+                <h2>Administrative staff Login</h2>
                 <form onSubmit={handleSubmit}>
                     <div className="input-group">
                         <label>Email:</label>

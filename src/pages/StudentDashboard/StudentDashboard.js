@@ -106,7 +106,7 @@ const StudentDashboard = () => {
                         className={activeSection === "uploading" ? "active" : ""}
                         onClick={() => setActiveSection("uploading")}
                     >
-                        📤 Uploading
+                        📤 Group Upload
                     </li>
                     <li
                         className={activeSection === "consultations" ? "active" : ""}

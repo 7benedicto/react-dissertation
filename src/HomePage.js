@@ -10,9 +10,9 @@ const HomePage = () => {
             <p>Please select your login type:</p>
             <div className="nav-links">
                 <Link to="/student-login" className="nav-button">Student Login</Link>
-                <Link to="/supervisor-login" className="nav-button">Supervisor Login</Link>
-                <Link to="/registration" className="nav-button">Registration</Link>
-                <Link to="/admin-login" className="nav-button">Admin</Link>
+                {/* <Link to="/supervisor-login" className="nav-button">Supervisor Login</Link> */}
+                <Link to="/registration" className="nav-button">Student Registration</Link>
+                <Link to="/admin-login" className="nav-button">Administrative staff</Link>
             </div>
         </div>
     );

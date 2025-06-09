@@ -9,6 +9,7 @@ const AutoGroupGeneratorForm = () => {
   const [baseName, setBaseName] = useState('Group');
   const [message, setMessage] = useState('');
   const [createdGroups, setCreatedGroups] = useState([]);
+  const [minFemalesPerGroup, setMinFemalesPerGroup] = useState(0);
 
   const token = localStorage.getItem('token');
 
@@ -54,6 +55,7 @@ const AutoGroupGeneratorForm = () => {
           course_id: selectedCourse,
           year_id: selectedYear,
           group_size: groupSize,
+          min_females_per_group: minFemalesPerGroup,
           base_name: baseName
         })
       });
@@ -99,6 +101,15 @@ const AutoGroupGeneratorForm = () => {
           min="2"
           max="10"
           required
+        />
+
+        <label>Min Female Students per Group:</label>
+        <input
+          type="number"
+          value={minFemalesPerGroup}
+          onChange={e => setMinFemalesPerGroup(parseInt(e.target.value))}
+          min="0"
+          max={groupSize}
         />
 
         <label>Base Group Name:</label>

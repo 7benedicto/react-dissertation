@@ -107,12 +107,12 @@ const SupervisorDashboard = () => {
                     >
                         Progress
                     </li>
-                    <li
+                    {/* <li
                         className={section === "notification" ? "active" : ""}
                         onClick={() => setSection("notification")}
                     >
                         Notification
-                    </li>
+                    </li> */}
                     <li
                         className={section === "profile" ? "active" : ""}
                         onClick={() => setSection("profile")}
