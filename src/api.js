@@ -14,13 +14,13 @@ export const registerStudent = async (studentData) => {
 };
 // For courses
 export const getCourses = async () => {
-    const response = await fetch('/api/courses/');
+    const response = await fetch(`${BASE_URL}/api/courses/`);
     return await response.json();
 };
 
 // For years
 export const getYears = async () => {
-    const response = await fetch('/api/years/');
+    const response = await fetch(`${BASE_URL}/api/years/`);
     return await response.json();
 };
 
@@ -30,7 +30,14 @@ export const loginStudent = async (credentials) => {
         const response = await axios.post(`${BASE_URL}/api/login/`, credentials);
         return response.data;
     } catch (error) {
-        throw error.response.data;
+        if (error.response) {
+            console.error("Server Error:", error.response.data);
+        } else if (error.request) {
+            console.error("No Response from Server:", error.request);
+        } else {
+            console.error("Error:", error.message);
+        }
+        throw error; // Ensure errors are propagated
     }
 };
 
