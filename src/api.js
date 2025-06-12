@@ -1,7 +1,7 @@
 // src/api.js
 import axios from 'axios';
 
-const API_BASE_URL = "https://student-and-dissertation-1.onrender.com";
+const BASE_URL = "https://student-and-dissertation-1.onrender.com";
 
 // Register a new student
 export const registerStudent = async (studentData) => {
