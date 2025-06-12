@@ -1,7 +1,7 @@
 // src/api.js
 import axios from 'axios';
 
-const BASE_URL = "https://student-and-dissertation-1.onrender.com";
+const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:8000";
 
 // Register a new student
 export const registerStudent = async (studentData) => {
@@ -14,13 +14,13 @@ export const registerStudent = async (studentData) => {
 };
 // For courses
 export const getCourses = async () => {
-    const response = await fetch(`${BASE_URL}/api/courses/`);
+    const response = await fetch('/api/courses/');
     return await response.json();
 };
 
 // For years
 export const getYears = async () => {
-    const response = await fetch(`${BASE_URL}/api/years/`);
+    const response = await fetch('/api/years/');
     return await response.json();
 };
 
@@ -30,14 +30,7 @@ export const loginStudent = async (credentials) => {
         const response = await axios.post(`${BASE_URL}/api/login/`, credentials);
         return response.data;
     } catch (error) {
-        if (error.response) {
-            console.error("Server Error:", error.response.data);
-        } else if (error.request) {
-            console.error("No Response from Server:", error.request);
-        } else {
-            console.error("Error:", error.message);
-        }
-        throw error; // Ensure errors are propagated
+        throw error.response.data;
     }
 };
 
