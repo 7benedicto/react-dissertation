@@ -1,7 +1,7 @@
 // src/api.js
 import axios from 'axios';
 
-const BASE_URL = 'http://127.0.0.1:8000'; // Django backend URL
+const API_BASE_URL = "https://student-and-dissertation-1.onrender.com";
 
 // Register a new student
 export const registerStudent = async (studentData) => {
