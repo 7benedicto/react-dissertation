@@ -12,15 +12,15 @@ export const registerStudent = async (studentData) => {
         throw error.response.data;
     }
 };
-// For courses
+//for courses
 export const getCourses = async () => {
-    const response = await fetch('/api/courses/');
+    const response = await fetch(`${BASE_URL}/api/courses/`);
     return await response.json();
 };
 
-// For years
+//for years
 export const getYears = async () => {
-    const response = await fetch('/api/years/');
+    const response = await fetch(`${BASE_URL}/api/years/`);
     return await response.json();
 };
 
