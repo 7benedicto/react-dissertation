@@ -15,7 +15,8 @@ const AdminLoginForm = () => {
 
         try {
             // Make API call to authenticate
-            const response = await axios.post("http://127.0.0.1:8000/api/admin-login/", {
+            const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:8000";
+            const response = await axios.post(`${BASE_URL}/api/admin-login/`, {
                 email,  // Assuming email is the username
                 password,
             });
