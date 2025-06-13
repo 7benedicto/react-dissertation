@@ -1,7 +1,7 @@
 // src/api.js
 import axios from 'axios';
 
-const BASE_URL = "https://student-and-dissertation.onrender.com";
+const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:8000";
 
 // Register a new student
 export const registerStudent = async (studentData) => {
