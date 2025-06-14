@@ -8,7 +8,8 @@ const NotificationBell = () => {
 
   const fetchNotifications = async () => {
     try {
-      const res = await axios.get('/api/notifications/?is_read=false', {
+      const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:8000";
+      const res = await axios.get(`${BASE_URL}/api/notifications/?is_read=false`, {
         headers: {
           Authorization: `Token ${localStorage.getItem('authToken')}`
         }
@@ -28,8 +29,9 @@ const NotificationBell = () => {
     setOpen(!open);
   };
 
+  const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:8000";
   const markAsRead = async (id) => {
-    await axios.post(`/api/notifications/${id}/mark_as_read/`, {}, {
+    await axios.post(`${BASE_URL}/api/notifications/${id}/mark_as_read/`, {}, {
       headers: {
         Authorization: `Token ${localStorage.getItem('authToken')}`
       }
