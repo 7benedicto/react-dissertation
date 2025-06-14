@@ -21,11 +21,12 @@ const AssignGroupSupervisor = () => {
         }
 
         try {
-            const projectGroupsResponse = await axios.get("http://127.0.0.1:8000/api/project-groups/", {
+            const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:8000";
+            const projectGroupsResponse = await axios.get(`${BASE_URL}/api/project-groups/`, {
                 headers: { Authorization: `Token ${token}` },
             });
 
-            const supervisorResponse = await axios.get("http://127.0.0.1:8000/api/supervisors/", {
+            const supervisorResponse = await axios.get(`${BASE_URL}/api/supervisors/`, {
                 headers: { Authorization: `Token ${token}` },
             });
 
@@ -43,8 +44,9 @@ const AssignGroupSupervisor = () => {
 
     const assignSupervisor = async (force = false) => {
         try {
+            const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:8000";
             const response = await axios.post(
-                "http://127.0.0.1:8000/api/assign-group-supervisor/",
+                `${BASE_URL}/api/assign-group-supervisor/`,
                 {
                     group_ids: selectedProjectGroups,
                     supervisor_id: selectedSupervisor,

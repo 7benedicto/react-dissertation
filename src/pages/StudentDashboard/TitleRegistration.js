@@ -12,7 +12,8 @@ const TitleRegistration = () => {
         const fetchProfile = async () => {
             const token = localStorage.getItem("token");
             try {
-                const response = await axios.get("http://127.0.0.1:8000/api/student-profile/", {
+                const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:8000";
+                const response = await axios.get(`${BASE_URL}/api/student-profile/`, {
                     headers: {
                         Authorization: `Token ${token}`,
                     },
@@ -34,9 +35,10 @@ const TitleRegistration = () => {
         const token = localStorage.getItem("token");
 
         try {
+            const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:8000";
             const url = isGroupLeader
-                ? "http://127.0.0.1:8000/api/register-group-title/"
-                : "http://127.0.0.1:8000/api/register-title/";
+                ? `${BASE_URL}/api/register-group-title/`
+                : `${BASE_URL}/api/register-title/`
 
             const payload = isGroupLeader
                 ? { project_title: projectTitle, group_id: groupId }

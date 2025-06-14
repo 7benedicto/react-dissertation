@@ -19,8 +19,9 @@ const AddSupervisor = () => {
         setMessage("");
 
         try {
+            const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:8000";
             const response = await axios.post(
-                "http://127.0.0.1:8000/api/create-supervisor/",
+                `${BASE_URL}/api/create-supervisor/`,
                 { username, email, password },
                 {
                     headers: {

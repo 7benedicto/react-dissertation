@@ -8,13 +8,14 @@ const LoginForm = () => {
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     const navigate = useNavigate();
-
+// const response = await axios.post("http://127.0.0.1:8000/api/login/",
     const handleSubmit = async (e) => {
         e.preventDefault();
         setError("");
 
         try {
-            const response = await axios.post("http://127.0.0.1:8000/api/login/", {
+            const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:8000";
+            const response = await axios.post(`${BASE_URL}/api/login/`, {
                 reg_number: regNumber,
                 password: password,
             });

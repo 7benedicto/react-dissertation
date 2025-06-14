@@ -11,7 +11,8 @@ const SupervisorProfile = () => {
     useEffect(() => {
         const fetchProfile = async () => {
             try {
-                const response = await axios.get("http://127.0.0.1:8000/api/supervisor-profile/", {
+                const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:8000";
+                const response = await axios.get(`${BASE_URL}/api/supervisor-profile/`, {
                     headers: {
                         Authorization: `Token ${token}`,
                     },

@@ -19,7 +19,8 @@ const SupervisorDocuments = () => {
             }
 
             try {
-                const response = await axios.get("http://127.0.0.1:8000/api/supervisor-documents/", {
+                const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:8000";
+                const response = await axios.get(`${BASE_URL}/api/supervisor-documents/`, {
                     headers: {
                         Authorization: `Token ${token}`,
                     },

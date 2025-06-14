@@ -16,7 +16,8 @@ const StudentUploads = () => {
         const fetchProfile = async () => {
             try {
                 const token = localStorage.getItem("token");
-                const res = await axios.get("http://127.0.0.1:8000/api/student-profile/", {
+                const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:8000";
+                const res = await axios.get(`${BASE_URL}/api/student-profile/`, {
                     headers: { Authorization: `Token ${token}` }
                 });
 
@@ -53,9 +54,10 @@ const StudentUploads = () => {
         }
 
         const token = localStorage.getItem("token");
+        const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:8000";
         const url = isGroupLeader
-            ? "http://127.0.0.1:8000/api/upload-group-document/"
-            : "http://127.0.0.1:8000/api/upload-student-document/";
+            ? `${BASE_URL}/api/upload-group-document/`
+            : `${BASE_URL}/api/upload-student-document/`
 
         try {
             setIsUploading(true);

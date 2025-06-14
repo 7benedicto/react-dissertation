@@ -22,7 +22,8 @@ const AdminAnnouncements = () => {
             }
 
             try {
-                const response = await axios.get("http://127.0.0.1:8000/api/admin-announcements/", {
+                const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:8000";
+                const response = await axios.get(`${BASE_URL}/api/admin-announcements/`, {
                     headers: {
                         Authorization: `Token ${token}`,
                     },
@@ -52,8 +53,9 @@ const AdminAnnouncements = () => {
         }
 
         try {
+            const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:8000";
             const response = await axios.post(
-                "http://127.0.0.1:8000/api/admin-announcements/",
+                `${BASE_URL}/api/admin-announcements/`,
                 { title, content, target_group: targetGroup },
                 {
                     headers: {

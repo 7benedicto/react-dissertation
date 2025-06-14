@@ -11,7 +11,8 @@ const StudentProgress = () => {
             try {
                 const token = localStorage.getItem("token");
                 const headers = { Authorization: `Token ${token}` };
-                const res = await axios.get("/api/student/milestones/", { headers });
+                const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:8000";
+                const res = await axios.get(`${BASE_URL}/api/student/milestones/`, { headers });
                 setMilestones(res.data);
             } catch (err) {
                 console.error("Error fetching student milestones", err);

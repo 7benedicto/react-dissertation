@@ -22,15 +22,16 @@ const AssignSupervisor = () => {
         }
 
         try {
+            const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:8000";
             const studentResponse = await axios.get(
-                "http://127.0.0.1:8000/api/students-without-groups/",
+                `${BASE_URL}/api/students-without-groups/`,
                 {
                     headers: { Authorization: `Token ${token}` },
                 }
             );
 
             const supervisorResponse = await axios.get(
-                "http://127.0.0.1:8000/api/supervisors/",
+                `${BASE_URL}/api/supervisors/`,
                 {
                     headers: { Authorization: `Token ${token}` },
                 }
@@ -50,8 +51,9 @@ const AssignSupervisor = () => {
 
     const assignSupervisor = async (force = false) => {
         try {
+            const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:8000";
             const response = await axios.post(
-                "http://127.0.0.1:8000/api/assign-supervisor/",
+                `${BASE_URL}/api/assign-supervisor/`,
                 {
                     reg_number: selectedStudent,
                     supervisor_id: selectedSupervisor,

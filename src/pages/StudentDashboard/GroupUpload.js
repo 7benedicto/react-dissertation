@@ -16,7 +16,8 @@ const GroupUpload = () => {
     const fetchProfile = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await axios.get("http://127.0.0.1:8000/api/student-profile/", {
+        const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:8000";
+        const res = await axios.get(`${BASE_URL}/api/student-profile/`, {
           headers: { Authorization: `Token ${token}` },
         });
 
@@ -54,7 +55,8 @@ const GroupUpload = () => {
     formData.append("supervisor", supervisorUsername || "");
 
     const token = localStorage.getItem("token");
-    const url = "http://127.0.0.1:8000/api/upload-group-document/";
+    const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:8000";
+    const url = `${BASE_URL}/api/upload-group-document//`;
 
     try {
       setIsUploading(true);

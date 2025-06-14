@@ -23,8 +23,9 @@ const AdminRepository = () => {
         if (filter) params.append("file_type", filter);
         if (selectedYear) params.append("year", selectedYear);
 
+        const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:8000";
         const response = await axios.get(
-          `http://127.0.0.1:8000/api/repository/?${params.toString()}`,
+          `${BASE_URL}/api/repository/?${params.toString()}`,
           {
             headers: {
               Authorization: `Token ${token}`,

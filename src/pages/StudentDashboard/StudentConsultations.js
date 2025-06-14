@@ -25,7 +25,8 @@ const StudentConsultationStatus = () => {
                     return;
                 }
 
-                const response = await axios.get("http://127.0.0.1:8000/api/student-consultations/", {
+                const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:8000";
+                const response = await axios.get(`${BASE_URL}/api/student-consultations/`, {
                     params: { regNumber },
                     headers: {
                         Authorization: `Token ${token}`,

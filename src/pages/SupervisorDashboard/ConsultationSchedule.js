@@ -22,7 +22,8 @@ const ConsultationSchedule = () => {
             }
 
             try {
-                const response = await axios.get("http://127.0.0.1:8000/api/manage-consultation/", {
+                const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:8000";
+                const response = await axios.get(`${BASE_URL}/api/manage-consultation/`, {
                     headers: {
                         Authorization: `Token ${token}`,
                     },
@@ -51,8 +52,9 @@ const ConsultationSchedule = () => {
         }
 
         try {
+            const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:8000";
             await axios.patch(
-                `http://127.0.0.1:8000/api/manage-consultation/${id}/`,
+                `${BASE_URL}/api/manage-consultation/${id}/`,
                 { status: newStatus },
                 {
                     headers: {

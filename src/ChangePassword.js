@@ -15,8 +15,9 @@ const ChangePassword = () => {
         try {
             const token = localStorage.getItem("authToken");
 
+            const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:8000";
             await axios.post(
-                "http://127.0.0.1:8000/api/change-password/",
+                `${BASE_URL}/api/change-password/`,
                 {
                     current_password: currentPassword,
                     new_password: newPassword,

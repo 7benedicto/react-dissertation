@@ -19,8 +19,9 @@ const ManageStages = () => {
     useEffect(() => {
         const fetchStages = async () => {
             try {
+                const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:8000";
                 const response = await axios.get(
-                    "http://127.0.0.1:8000/api/stages/",
+                    `${BASE_URL}/api/stages/`,
                     getAuthConfig()
                 );
                 setStages(response.data);
@@ -36,8 +37,9 @@ const ManageStages = () => {
     const handleAddStage = async (e) => {
         e.preventDefault();
         try {
+            const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:8000";
             const response = await axios.post(
-                "http://127.0.0.1:8000/api/stages/",
+                `${BASE_URL}/api/stages/`,
                 newStage,
                 getAuthConfig()
             );
@@ -52,8 +54,9 @@ const ManageStages = () => {
 
     const handleDeleteStage = async (stageId) => {
         try {
+            const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:8000";
             await axios.delete(
-                `http://127.0.0.1:8000/api/stages/${stageId}/`,
+                `${BASE_URL}/api/stages/${stageId}/`,
                 getAuthConfig()
             );
             setStages(stages.filter((stage) => stage.id !== stageId));
