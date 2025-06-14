@@ -8,7 +8,8 @@ const MyGroup = () => {
   useEffect(() => {
     const fetchGroup = async () => {
       try {
-        const res = await fetch('/api/my-group/', {
+        const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:8000";
+        const res = await fetch(`${BASE_URL}/api/my-group/`, {
           headers: {
             Authorization: `Token ${token}`,
           },
