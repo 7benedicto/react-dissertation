@@ -19,7 +19,7 @@ const StudentAnnouncements = () => {
 
             try {
                 const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:8000";
-                const response = await axios.post(`${BASE_URL}/api/student-announcements/`, {
+                const response = await axios.get(`${BASE_URL}/api/student-announcements/`, {
                     headers: {
                         Authorization: `Token ${token}`,
                     },

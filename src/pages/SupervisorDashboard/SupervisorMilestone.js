@@ -16,7 +16,8 @@ const SupervisorMilestone = () => {
             try {
                 const token = localStorage.getItem("authToken");
                 const headers = { Authorization: `Token ${token}` };
-                const res = await axios.get("/api/milestones/", { headers });
+                const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:8000";
+                const res = await axios.get(`${BASE_URL}/api/milestones/`, { headers });
 
                 // Group milestones by student or group name
                 const grouped = res.data.reduce((acc, milestone) => {
@@ -54,9 +55,10 @@ const SupervisorMilestone = () => {
                 "Content-Type": "application/json",
             };
 
-            await axios.put(`/api/milestones/${milestoneId}/`, updatedFields, { headers });
+            const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:8000";
+            await axios.put(`${BASE_URL}/api/milestones/${milestoneId}/`, updatedFields, { headers });
 
-            const res = await axios.get("/api/milestones/", { headers });
+            const res = await axios.get(`${BASE_URL}/api/milestones/`, { headers });
             setMilestones(res.data);
 
             const grouped = res.data.reduce((acc, milestone) => {

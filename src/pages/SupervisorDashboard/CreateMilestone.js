@@ -19,8 +19,9 @@ const CreateMilestone = () => {
 
     useEffect(() => {
         // Fetch students
+        const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:8000";
         axios
-            .get("/api/assigned-students/", {
+            .get(`${BASE_URL}/api/assigned-students/`, {
                 headers: { Authorization: `Token ${token}` },
             })
             .then((res) => setStudents(res.data))
@@ -31,7 +32,7 @@ const CreateMilestone = () => {
 
         // Fetch groups
         axios
-            .get("/api/assigned-groups/", {
+            .get(`${BASE_URL}/api/assigned-groups/`, {
                 headers: { Authorization: `Token ${token}` },
             })
             .then((res) => setGroups(res.data))
@@ -42,7 +43,7 @@ const CreateMilestone = () => {
 
         // Fetch stages
         axios
-            .get("/api/stages/", {
+            .get(`${BASE_URL}/api/stages/`, {
                 headers: { Authorization: `Token ${token}` },
             })
             .then((res) => setStages(res.data))
@@ -70,8 +71,9 @@ const CreateMilestone = () => {
             remarks,
         };
 
+        const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:8000";
         axios
-            .post("/api/milestones/", data, {
+            .post(`${BASE_URL}/api/milestones/`, data, {
                 headers: { Authorization: `Token ${token}` },
             })
             .then(() => {

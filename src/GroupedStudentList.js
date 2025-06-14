@@ -17,7 +17,8 @@ const GroupedStudentList = () => {
           return;
         }
 
-        const response = await fetch('/api/grouped-students/', {
+        const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:8000";
+        const response = await fetch(`${BASE_URL}/api/grouped-students/`, {
           headers: {
             'Authorization': `Token ${token}`,
             'Content-Type': 'application/json',

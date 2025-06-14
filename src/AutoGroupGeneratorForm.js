@@ -17,11 +17,12 @@ const AutoGroupGeneratorForm = () => {
   useEffect(() => {
     const fetchDropdowns = async () => {
       try {
+        const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:8000";
         const [coursesRes, yearsRes] = await Promise.all([
-          fetch('/api/courses/', {
+          fetch(`${BASE_URL}/api/courses/`, {
             headers: { Authorization: `Token ${token}` }
           }),
-          fetch('/api/years/', {
+          fetch(`${BASE_URL}/api/years/`, {
             headers: { Authorization: `Token ${token}` }
           }),
         ]);
@@ -45,7 +46,8 @@ const AutoGroupGeneratorForm = () => {
     setCreatedGroups([]);
 
     try {
-      const res = await fetch('/api/auto-create-groups/', {
+      const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:8000";
+      const res = await fetch(`${BASE_URL}/api/auto-create-groups/`, {
         method: 'POST',
         headers: {
           'Authorization': `Token ${token}`,

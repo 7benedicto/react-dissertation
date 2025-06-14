@@ -15,10 +15,11 @@ const ProjectGroupList = () => {
 
   const fetchInitialData = useCallback(async () => {
     try {
+      const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:8000";
       const [courseRes, yearRes, groupRes] = await Promise.all([
-        fetch('/api/courses/', { headers: { Authorization: `Token ${token}` } }),
-        fetch('/api/years/', { headers: { Authorization: `Token ${token}` } }),
-        fetch('/api/project-groups/', { headers: { Authorization: `Token ${token}` } }),
+        fetch(`${BASE_URL}/api/courses/`, { headers: { Authorization: `Token ${token}` } }),
+        fetch(`${BASE_URL}/api/years/`, { headers: { Authorization: `Token ${token}` } }),
+        fetch(`${BASE_URL}/api/project-groups/`, { headers: { Authorization: `Token ${token}` } }),
       ]);
 
       if (!courseRes.ok || !yearRes.ok || !groupRes.ok) {
@@ -56,7 +57,8 @@ const ProjectGroupList = () => {
   const handleDelete = async (id) => {
     if (!window.confirm('Are you sure you want to delete this group?')) return;
     try {
-      const res = await fetch(`/api/project-groups/${id}/`, {
+      const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:8000";
+      const res = await fetch(`${BASE_URL}/api/project-groups/${id}/`, {
         method: 'DELETE',
         headers: { Authorization: `Token ${token}` },
       });
