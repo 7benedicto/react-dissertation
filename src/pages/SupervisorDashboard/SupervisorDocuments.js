@@ -7,6 +7,7 @@ const SupervisorDocuments = () => {
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(true);
     const [filterType, setFilterType] = useState("all"); // "all" | "student" | "group"
+    const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:8000";
 
     useEffect(() => {
         const fetchDocuments = async () => {
@@ -103,7 +104,7 @@ const SupervisorDocuments = () => {
                                 <td>{new Date(doc.uploaded_at).toLocaleString()}</td>
                                 <td>
                                     <a
-                                        href={`http://127.0.0.1:8000${doc.file}`}
+                                        href={`${BASE_URL}${doc.file}`}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="doc-link view"
@@ -111,7 +112,7 @@ const SupervisorDocuments = () => {
                                         🔍 View
                                     </a>
                                     <a
-                                        href={`http://127.0.0.1:8000${doc.file}`}
+                                        href={`${BASE_URL}${doc.file}`}
                                         download
                                         className="doc-link download"
                                     >
